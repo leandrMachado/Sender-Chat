@@ -8,6 +8,16 @@ body{
     font-family: 'space grotesk',sans-serif;
 }
 
+:root{
+    --ColorTeste: #7fffd4;
+
+    --ColorBlack: #000;
+    --ColorWhite: #fff;
+    --ColorRed: #fff;
+    --ColorLettersBlack: #000;
+    --ColorLettersWhite: #fff;
+}
+
 nav{
     width: 100%;
     height: 90px;
@@ -15,7 +25,8 @@ nav{
     align-items: end;
     position: absolute;
     top: 0px;
-    border-top: 8px solid #000;
+    border-top: 8px solid var(--ColorBlack);
+    z-index: 10;
 }
 
 .conteiner-menu{
@@ -46,7 +57,7 @@ nav{
 
 .conteiner-menu ul li a{
     text-decoration: none;
-    color: #000;
+    color: var(--ColorLettersBlack);
 }
 
 .button{
@@ -62,15 +73,176 @@ nav{
     position: absolute;
     right: 20px;
     margin: 10px;
+    text-decoration: none;
+    color: #000;
 }
 
 .button:hover{
-    background-color: #000;
+    background-color: var(--ColorBlack);
     color: aquamarine;
 }
 
+.home-page{
+    width: 100%;
+    height: 100vh;
+    background-color: beige;
+}
 
 
+/* Second Page*/
+.service-local{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header-service{
+    width: 100%;
+    height: 35vh;
+    background-color: aquamarine;
+    position: relative;
+}
+
+.conteiner-text{
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-direction: column;
+}
+
+.header-title{
+    margin: 5px;
+    letter-spacing: 1px;
+    font-size: 45px;
+}
+
+.header-services{
+    margin: 5px;
+    letter-spacing: 1px;
+}
+
+.body-service{
+    width: 70%;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.child-panel{
+    width: 300px;
+    height: 500px;
+    border-radius: 20px;
+    margin: 25px;
+    position: relative;
+}
+
+.header-panel{
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    top: 0px;
+    background-color: antiquewhite;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.header-panel-title{
+    margin: 45px 25px;
+    font-size: 21px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.header-panel-text{
+    margin: 35px 25px;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    position: absolute;
+    bottom: 60px;
+}
+
+.button-efect{
+    width: 270px;
+    height: 50px;
+    background-color: var(--ColorBlack);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    transition: all 1s;
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    bottom: 20px;
+    margin: 10px;
+    text-decoration: none;
+    color: var(--ColorLettersWhite);
+    font-weight: 600;
+}
+
+.body-panel{
+    width: 100%;
+    height: 40%;
+    position: absolute;
+    bottom: 0px;
+    background-color: aquamarine;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.body-panel ul{
+    padding: 25px 20px;
+}
+
+.body-panel ul li{
+    padding: 10px;
+    list-style: none;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.body-panel-text{
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.checkmark {
+    display:inline-block;
+    width: 13px;
+    height: 13px;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg); 
+    transform: rotate(45deg);
+    background-color: #000;
+    border-radius: 50%;
+}
+
+.checkmark_stem {
+    position: absolute;
+    width: 1px;
+    height: 8px;
+    background-color: #fff;
+    left: 7px;
+    top: 2px;
+}
+
+.checkmark_kick {
+    position: absolute;
+    width: 4px;
+    height: 1px;
+    background-color: #fff;
+    left: 4px;
+    top: 9px;
+}
 
 @media only screen and (min-width: 200px) and (max-width: 1050px){
 
@@ -98,7 +270,7 @@ nav{
     .animation-button{
         width: 30px;
         height: 2px;
-        background-color: #000;
+        background-color: var(--ColorBlack);
         border-radius: 5px;
         z-index: 20;
     }
@@ -107,7 +279,7 @@ nav{
         content: '';
         width: 30px;
         height: 2px;
-        background-color: #000;
+        background-color: var(--ColorBlack);
         border-radius: 5px;
         position: absolute;
         bottom: 5px;
@@ -117,7 +289,7 @@ nav{
         content: '';
         width: 30px;
         height: 2px;
-        background-color: #000;
+        background-color: var(--ColorBlack);
         border-radius: 5px;
         position: absolute;
         top: 5px;
@@ -156,6 +328,33 @@ nav{
     .conteiner-menu ul li a{
         font-size: 25px;
         font-weight: 600;
+    }
+
+    .service-local{
+        height: 250vh;
+        position: absolute;
+        top: 0px;
+    }
+
+    .header-service{
+        height: 30vh;
+    }
+
+    .conteiner-text{
+        justify-content: center;
+    }
+
+    .header-title{
+        font-size: 29px;
+    }
+
+    .header-services{
+        font-size: 15px;
+    }
+
+    .body-service{
+        flex-direction: column;
+        height: 190vh;
     }
 }
 
