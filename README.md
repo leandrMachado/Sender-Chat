@@ -1,11 +1,9 @@
 # Sender-Chat
-* [General info](#general-info)
+This project is simple Lorem ipsum dolor generator.
+
 * [Technologies](#technologies)
 * [Setup](#setup)
 
-## General info
-This project is simple Lorem ipsum dolor generator.
-	
 ## Technologies
 Project is created with:
 * Node.js: 16.15.0
@@ -15,6 +13,5 @@ Project is created with:
 ## Setup
 To run this project, install it locally using npm:
 ```
-$ npm start
 $ node index.js
 ```
