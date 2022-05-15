@@ -1,5 +1,5 @@
 # Sender-Chat
-This project is simple Lorem ipsum dolor generator.
+This project is simple Real time chat.
 
 * [Technologies](#technologies)
 * [Setup](#setup)
