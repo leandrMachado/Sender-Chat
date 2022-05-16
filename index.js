@@ -4,6 +4,7 @@ var app = express();
 var port = process.env.PORT || 3000;
 
 app.use('/styles', express.static('styles'));
+app.use(express.static(__dirname + '/styles'));
 
 app.get("/", (req, res)=>{
     res.sendFile(path.join(__dirname, './views/index.html'))
