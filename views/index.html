@@ -8,16 +8,15 @@
     <link rel="stylesheet" href="../styles/index.css">
 </head>
 <body>
+    <nav>
+        <div class="user-input"> <span class="icon"></span> <input id="name" value=""> </div>
+    </nav>
     <div class="content-app">
-        <div id="content" style="width: 500px; height: 300px; margin: 0 0 20px 0; border: solid 1px #999; overflow-y: scroll;">  </div>
+        <div id="content">  </div>
 
         <div class="controls">
-            Name: 
-            <input id="name" style="width:350px;" control-id="ControlID-1">
-            <br>
-            meessage:
-            <input id="field" style="width:350px;" control-id="ControlID-2">
-            <input id="send" type="button" value="send" control-id="ControlID-3">
+            <input id="field" type="text" placeholder="Message"">
+            <input id="send" type="button" value="send">
         </div>     
     </div>
 </body>

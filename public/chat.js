@@ -1,33 +1,13 @@
 window.onload = function() {
 
     var messages = [];
-    var users = [];
     var socket = io.connect('http://localhost:3000');
     var field = document.getElementById("field");
     var sendButton = document.getElementById("send");
     var content = document.getElementById("content");
-    var inputName = document.getElementById("name");
+    var name = document.getElementById("name");
 
-    inputName.value = String(socket.id)
-
-    var addUser = (id , name) =>{
-        var user = { id, name }
-        users.push(user)
-        return { user }
-    };
-
-    var getUser = id =>{
-        let user = users.find(user => user.id == id )
-        return user
-    }
-
-    var deleteUser = id =>{
-        var index = users.findIndex((user) => user.id === id)
-        if(index !== -1){
-            return users.splice(index, 1)[0];
-        }
-    }
-
+    //message listener
     socket.on('message', function (data) {
         if(data.message) {
             messages.push(data);
@@ -46,16 +26,17 @@ window.onload = function() {
             console.log("There is a problem:", data);
         }
     });
-
+    // button to send message to socket
     sendButton.onclick = function() {
+    	if(name.value == "") {
+            alert("Please type your name!");
+        } else {
         var text = field.value;
-        var user = getUser(socket.id);
-
-        socket.emit('send', { message: text, username: user });
-
+        socket.emit('send', { message: text, username: name.value });
         field.value = '';
+        }
     };
-
+    // set enter key listener 
     field.addEventListener('keypress', function (e) {
 	    var key = e.which || e.keyCode;
 	    if (key === 13) { 
