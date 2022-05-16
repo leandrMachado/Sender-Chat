@@ -1,26 +1,17 @@
 {
-  "name": "sender-chat",
+  "name": "nova-pasta",
   "version": "1.0.0",
-  "description": "This project is simple Lorem ipsum dolor generator.",
+  "description": "",
   "main": "index.js",
   "engines": {
     "node": "16.x"
   },
   "scripts": {
-    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/leandrMachado/Sender-Chat.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/leandrMachado/Sender-Chat/issues"
-  },
-  "homepage": "https://github.com/leandrMachado/Sender-Chat#readme",
   "dependencies": {
     "express": "^4.18.1",
     "socket.io": "^4.5.0"
