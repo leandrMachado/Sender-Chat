@@ -8,7 +8,8 @@ window.onload = function() {
     var content = document.getElementById("content");
     var inputName = document.getElementById("name");
 
-    inputName.value = String(socket.id)
+    inputName.value = socket.id
+  
 
     var addUser = (id , name) =>{
         var user = { id, name }
@@ -21,12 +22,9 @@ window.onload = function() {
         return user
     }
 
-    var deleteUser = id =>{
-        var index = users.findIndex((user) => user.id === id)
-        if(index !== -1){
-            return users.splice(index, 1)[0];
-        }
-    }
+    socket.on('connection', (socket)=>{
+        console.log(socket.id)
+    })
 
     socket.on('message', function (data) {
         if(data.message) {
@@ -48,11 +46,10 @@ window.onload = function() {
     });
 
     sendButton.onclick = function() {
+        addUser(socket.id, inputName.value)
         var text = field.value;
         var user = getUser(socket.id);
-
-        socket.emit('send', { message: text, username: user });
-
+        socket.emit('send', { message: text, username: user.name });
         field.value = '';
     };
 
